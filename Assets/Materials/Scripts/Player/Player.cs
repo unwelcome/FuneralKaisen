@@ -77,6 +77,7 @@ public class Player : MonoBehaviour
     private void OnMove(InputValue value)
     {
         moveInput = value.Get<float>();
+        Debug.Log(moveInput);
     }
 
     // Обработчик прыжка
@@ -111,8 +112,7 @@ public class Player : MonoBehaviour
     // Физика
     private void FixedUpdate()
     {
-        // Проверка, стоим ли мы на месте
-        //isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer | platformLayer);
+        // Проверка, стоим ли мы на земле
         RaycastHit2D hit = Physics2D.BoxCast(
             groundCheck.position,
             groundBoxSize,
@@ -124,24 +124,8 @@ public class Player : MonoBehaviour
 
         isGrounded = hit.collider != null && hit.normal.y > 0.5f && !isDropping;
 
-        if (isDashing)
-        {
-            // Анимация деша
-            State = PlayerAnimationStates.dash;
-            // Во время деша нельзя двигаться
-            return;
-        }
-
-        // Анимация прыжка
-        if (!isGrounded) State = PlayerAnimationStates.jump;
-        else
-        {
-            // Анимация покоя
-            if (moveInput == 0) State = PlayerAnimationStates.idle;
-            // Анимация ходьбы
-            else State = PlayerAnimationStates.walk;
-        }
-
+        // Во время деша нельзя двигаться
+        if (isDashing) return;
 
         // Горизонтальное движение
         rb.linearVelocity = new Vector2(moveInput * velocity, rb.linearVelocity.y);
@@ -150,8 +134,38 @@ public class Player : MonoBehaviour
     private void Update()
     {
 
+        if (isDashing)
+        {
+            // Анимация деша
+            Debug.Log("dash");
+            State = PlayerAnimationStates.dash;
+            // Во время деша нельзя двигаться
+            return;
+        }
+
+        // Анимация прыжка
+        if (!isGrounded)
+        {
+            Debug.Log("jump");
+            State = PlayerAnimationStates.jump;
+        }
+        else
+        {
+            // Анимация покоя
+            if (moveInput == 0)
+            {
+                Debug.Log("idle");
+                State = PlayerAnimationStates.idle;
+            }
+            // Анимация ходьбы
+            else
+            {
+                Debug.Log("walk");
+                State = PlayerAnimationStates.walk;
+            }
+        }
+
         // Визуальное отражение спрайта
-        if (isDashing) return;
         if (moveInput > 0) sprite.flipX = false;
         else if (moveInput < 0) sprite.flipX = true;
     }
@@ -228,7 +242,7 @@ public class Player : MonoBehaviour
 
         // Делаем персонажа слегка прозрачным
         Color color = sprite.color;
-        color.a = 0.7f;
+        color.a = 0.8f;
         sprite.color = color;
 
         // Добавить анимацию неуязвимости

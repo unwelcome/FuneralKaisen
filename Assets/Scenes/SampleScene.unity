@@ -26759,7 +26759,7 @@ MonoBehaviour:
   dashDuration: 0.35
   dashCooldown: 0.3
   health: 100
-  immortalTimeOnHit: 0.5
+  immortalTimeOnHit: 1.5
 --- !u!1 &2030857625
 GameObject:
   m_ObjectHideFlags: 0

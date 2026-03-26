@@ -10,12 +10,12 @@ public class ThornsController : MonoBehaviour
 
     // Анимации
     private Animator animator;
-    private ThornEnimationStates State
+    private ThornAnimationStates State
     {
-        get { return (ThornEnimationStates)animator.GetInteger("State"); }
+        get { return (ThornAnimationStates)animator.GetInteger("State"); }
         set { animator.SetInteger("State", (int)value); }
     }
-    private enum ThornEnimationStates
+    private enum ThornAnimationStates
     {
         idle_hidden,
         show,
@@ -27,6 +27,7 @@ public class ThornsController : MonoBehaviour
     private bool isActive;
     private bool isTriggered;
     private float activeTimer = 0f;
+    private Player playerInside;
 
     // Инициализация шипов
     private void Awake()
@@ -35,45 +36,47 @@ public class ThornsController : MonoBehaviour
         isActive = alwaysActive;
     }
 
-    // Отсчет времени жизни
     private void Update()
     {
         if (!isActive)
         {
-            State = ThornEnimationStates.idle_hidden;
+            State = ThornAnimationStates.idle_hidden;
             return;
         }
 
-        activeTimer -= Time.deltaTime;
-
-        if (activeTimer <= 0f)
+        // Обновляем таймер шипов пока игрок внутри и наносим урон
+        if (playerInside != null)
         {
-            Deactivate();
+            activeTimer = activeTime;
+            playerInside.GetDamage(damage);
         }
+        // Иначе уменьшаем таймер жизни шипов
+        else activeTimer -= Time.deltaTime;
+
+        // Время жизни истекло -> отключаем
+        if (activeTimer <= 0f) Deactivate();
     }
 
-    // При первом контакте с шипами
+    // При первом контакте с шипами запоминаем игрока
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Player player = collider.GetComponent<Player>();
 
-        if (player != null && !isTriggered)
+        if (player != null)
         {
-            StartCoroutine(ActivateThorns()); // Активируем шипы
+            playerInside = player;
+            if (!isTriggered) StartCoroutine(ActivateThorns()); // Активируем шипы
         }
     }
 
-    // При продолжительном нахождении в шипах
-    private void OnTriggerStay2D(Collider2D collider)
+    // При выходе игрока из шипов
+    private void OnTriggerExit2D(Collider2D collider)
     {
-        if (!isActive) return;
-
         Player player = collider.GetComponent<Player>();
 
-        // Если это был игрок и он получил урон, то продливаем время жизни шипа
-        if (player != null && player.GetDamage(damage))
+        if (player != null && playerInside == player)
         {
-            activeTimer = activeTime;
+            playerInside = null;
         }
     }
 
@@ -81,7 +84,7 @@ public class ThornsController : MonoBehaviour
     {
         // Активируем шипы
         isTriggered = true;
-        State = ThornEnimationStates.show;
+        State = ThornAnimationStates.show;
 
         // Ожидаем задержку активации
         yield return new WaitForSeconds(activateDelay);
@@ -89,7 +92,7 @@ public class ThornsController : MonoBehaviour
         // Шипы активированы
         isActive = true;
         activeTimer = activeTime;
-        State = ThornEnimationStates.idle_active;
+        State = ThornAnimationStates.idle_active;
     }
 
     // Убираем шипы
@@ -97,6 +100,6 @@ public class ThornsController : MonoBehaviour
     {
         isActive = false;
         isTriggered = false;
-        State = ThornEnimationStates.hide;
+        State = ThornAnimationStates.hide;
     }
 }
