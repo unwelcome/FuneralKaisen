@@ -13,10 +13,10 @@ TagManager:
   - UI
   - Platform
   - Background
-  - 
-  - 
-  - 
-  - 
+  - Decorations
+  - Player
+  - Enemies
+  - Projectiles
   - 
   - 
   - 
@@ -47,11 +47,17 @@ TagManager:
   - name: Midground
     uniqueID: 1055449965
     locked: 0
+  - name: Enemies
+    uniqueID: 49812367
+    locked: 0
   - name: Player
     uniqueID: 271585321
     locked: 0
   - name: Traps
     uniqueID: 1288338067
+    locked: 0
+  - name: Projectiles
+    uniqueID: 3712743161
     locked: 0
   - name: Foreground
     uniqueID: 1931199143
