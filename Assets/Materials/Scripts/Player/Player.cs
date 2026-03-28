@@ -55,7 +55,8 @@ public class Player : MonoBehaviour
         idle,
         walk,
         jump,
-        dash
+        dash,
+        death
     }
 
     // ---------------------------------------------- ПРИВАТНЫЕ МЕТОДЫ ----------------------------------------------
@@ -67,6 +68,14 @@ public class Player : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         playerCollider = GetComponent<Collider2D>();
+
+        // Отключение касания вврагов
+        Physics2D.IgnoreLayerCollision(
+            LayerMask.NameToLayer("Player"),
+            LayerMask.NameToLayer("Enemies"),
+            true
+        );
+
     }
 
     // Обработчик движений при нажатии 'A' и 'D'
@@ -128,36 +137,28 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-
+        if (health <= 0)
+        {
+            // Анимация смерти
+            State = PlayerAnimationStates.death;
+            return;
+        }
         if (isDashing)
         {
             // Анимация деша
-            //Debug.Log("dash");
             State = PlayerAnimationStates.dash;
             // Во время деша нельзя двигаться
             return;
         }
 
         // Анимация прыжка
-        if (!isGrounded)
-        {
-            //Debug.Log("jump");
-            State = PlayerAnimationStates.jump;
-        }
+        if (!isGrounded) State = PlayerAnimationStates.jump;
         else
         {
             // Анимация покоя
-            if (moveInput == 0)
-            {
-                //Debug.Log("idle");
-                State = PlayerAnimationStates.idle;
-            }
+            if (moveInput == 0) State = PlayerAnimationStates.idle;
             // Анимация ходьбы
-            else
-            {
-                //Debug.Log("walk");
-                State = PlayerAnimationStates.walk;
-            }
+            else State = PlayerAnimationStates.walk;
         }
 
         // Визуальное отражение спрайта
