@@ -4,9 +4,6 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-
-    //public static Player Instance { get; set; }
-
     // ---------------------------------------------- ПОЛЯ ----------------------------------------------
 
     [Header("Movement Settings")]
@@ -70,14 +67,12 @@ public class Player : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         playerCollider = GetComponent<Collider2D>();
-        //Instance = this;
     }
 
     // Обработчик движений при нажатии 'A' и 'D'
     private void OnMove(InputValue value)
     {
         moveInput = value.Get<float>();
-        Debug.Log(moveInput);
     }
 
     // Обработчик прыжка
@@ -137,7 +132,7 @@ public class Player : MonoBehaviour
         if (isDashing)
         {
             // Анимация деша
-            Debug.Log("dash");
+            //Debug.Log("dash");
             State = PlayerAnimationStates.dash;
             // Во время деша нельзя двигаться
             return;
@@ -146,7 +141,7 @@ public class Player : MonoBehaviour
         // Анимация прыжка
         if (!isGrounded)
         {
-            Debug.Log("jump");
+            //Debug.Log("jump");
             State = PlayerAnimationStates.jump;
         }
         else
@@ -154,13 +149,13 @@ public class Player : MonoBehaviour
             // Анимация покоя
             if (moveInput == 0)
             {
-                Debug.Log("idle");
+                //Debug.Log("idle");
                 State = PlayerAnimationStates.idle;
             }
             // Анимация ходьбы
             else
             {
-                Debug.Log("walk");
+                //Debug.Log("walk");
                 State = PlayerAnimationStates.walk;
             }
         }
@@ -242,7 +237,7 @@ public class Player : MonoBehaviour
 
         // Делаем персонажа слегка прозрачным
         Color color = sprite.color;
-        color.a = 0.8f;
+        color.a = 0.85f;
         sprite.color = color;
 
         // Добавить анимацию неуязвимости

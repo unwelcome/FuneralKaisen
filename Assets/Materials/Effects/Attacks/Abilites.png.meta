@@ -1,0 +1,824 @@
+fileFormatVersion: 2
+guid: ae544d4e74031e44da9e1b03fc4f1bf2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4271055753251255963
+    second: Abilites_0
+  - first:
+      213: 7103914296733182532
+    second: Abilites_1
+  - first:
+      213: -6368689089694918502
+    second: Abilites_2
+  - first:
+      213: -2112141511658336031
+    second: Abilites_3
+  - first:
+      213: 4106791994659729540
+    second: Abilites_4
+  - first:
+      213: 535207038152174336
+    second: Abilites_5
+  - first:
+      213: -2252695142527498228
+    second: Abilites_6
+  - first:
+      213: 5676647543969572540
+    second: Abilites_7
+  - first:
+      213: 5036793043396049292
+    second: Abilites_8
+  - first:
+      213: 6357043983348745082
+    second: Abilites_9
+  - first:
+      213: -7847475812576663360
+    second: Abilites_10
+  - first:
+      213: -6446456538350035713
+    second: Abilites_11
+  - first:
+      213: 1505860568965994661
+    second: Abilites_12
+  - first:
+      213: -7758532257303694903
+    second: Abilites_13
+  - first:
+      213: 8014657144063220003
+    second: Abilites_14
+  - first:
+      213: -3668796969501540449
+    second: Abilites_15
+  - first:
+      213: 2621215166446142037
+    second: Abilites_16
+  - first:
+      213: 3548430646671065956
+    second: Abilites_17
+  - first:
+      213: 4262722261977908389
+    second: Abilites_18
+  - first:
+      213: -91968638394384779
+    second: Abilites_19
+  - first:
+      213: 6605423246588535724
+    second: Abilites_20
+  - first:
+      213: -1619619977965011870
+    second: Abilites_21
+  - first:
+      213: -7959461066141339519
+    second: Abilites_22
+  - first:
+      213: 3673827462625740016
+    second: Abilites_23
+  - first:
+      213: 3219881910751956409
+    second: Abilites_24
+  - first:
+      213: -6385709046484680197
+    second: Abilites_25
+  - first:
+      213: 2987017829015207052
+    second: Abilites_26
+  - first:
+      213: 5364898561049748853
+    second: Abilites_27
+  - first:
+      213: 8641582913314422152
+    second: Abilites_28
+  - first:
+      213: 4102484382785944581
+    second: Abilites_29
+  - first:
+      213: 4828335543196760114
+    second: Abilites_30
+  - first:
+      213: -6812394176118084582
+    second: Abilites_31
+  - first:
+      213: 7139122322845601024
+    second: Abilites_32
+  - first:
+      213: -139558575385014210
+    second: Abilites_33
+  - first:
+      213: -2371610382131200086
+    second: Abilites_34
+  - first:
+      213: 2670583361790177280
+    second: Abilites_35
+  - first:
+      213: -8110035506625902175
+    second: Abilites_36
+  - first:
+      213: 2113745576479184566
+    second: Abilites_37
+  - first:
+      213: -7910728894888128339
+    second: Abilites_38
+  - first:
+      213: 7486298397085657304
+    second: Abilites_39
+  - first:
+      213: -6031916584362591511
+    second: Abilites_40
+  - first:
+      213: -7399863564303112479
+    second: Abilites_41
+  - first:
+      213: 3272457263837366901
+    second: Abilites_42
+  - first:
+      213: -4715762764119802019
+    second: Abilites_43
+  - first:
+      213: -6088764463550612119
+    second: Abilites_44
+  - first:
+      213: 1761858056519574655
+    second: Abilites_45
+  - first:
+      213: -289791064020870430
+    second: Abilites_46
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Abilites_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 340
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b96fd6c1496d54b30800000000000000
+      internalID: 4271055753251255963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 340
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44aa99b2a6c269260800000000000000
+      internalID: 7103914296733182532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_2
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 340
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9814d3040fdd97a0800000000000000
+      internalID: -6368689089694918502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_3
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 340
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e09f3a5c7a20b2e0800000000000000
+      internalID: -2112141511658336031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 276
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4807c187f814ef830800000000000000
+      internalID: 4106791994659729540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_5
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 276
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00b695e27ff6d6700800000000000000
+      internalID: 535207038152174336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_6
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 276
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c08866204b1dcb0e0800000000000000
+      internalID: -2252695142527498228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_7
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 276
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb666657dd087ce40800000000000000
+      internalID: 5676647543969572540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 212
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c89b7ce369846e540800000000000000
+      internalID: 5036793043396049292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_9
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 212
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a73490162d1c83850800000000000000
+      internalID: 6357043983348745082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_10
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 212
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c8e5ef735a281390800000000000000
+      internalID: -7847475812576663360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_11
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 212
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffcd6a3eee59986a0800000000000000
+      internalID: -6446456538350035713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_12
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 151
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a85c768534e5e410800000000000000
+      internalID: 1505860568965994661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_13
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 145
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c1f009b408245490800000000000000
+      internalID: -7758532257303694903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_14
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 146
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3295f648538c93f60800000000000000
+      internalID: 8014657144063220003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_15
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 144
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9fb4d72890d51dc0800000000000000
+      internalID: -3668796969501540449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_16
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 69
+        width: 13
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55283eb5e4d606420800000000000000
+      internalID: 2621215166446142037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_17
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 64
+        width: 16
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46340fc6fde8e3130800000000000000
+      internalID: 3548430646671065956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_18
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 65
+        width: 19
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a4c759ff4b382b30800000000000000
+      internalID: 4262722261977908389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_19
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 64
+        width: 17
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57eb60ab20349bef0800000000000000
+      internalID: -91968638394384779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_21
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 14
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26cf44e0634f589e0800000000000000
+      internalID: -1619619977965011870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_25
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 14
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf1484584776167a0800000000000000
+      internalID: -6385709046484680197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilites_29
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 14
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50c3b8c6fc3fee830800000000000000
+      internalID: 4102484382785944581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5d481478177cf0345ba25bd6458aa0bb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Abilites_0: 4271055753251255963
+      Abilites_1: 7103914296733182532
+      Abilites_10: -7847475812576663360
+      Abilites_11: -6446456538350035713
+      Abilites_12: 1505860568965994661
+      Abilites_13: -7758532257303694903
+      Abilites_14: 8014657144063220003
+      Abilites_15: -3668796969501540449
+      Abilites_16: 2621215166446142037
+      Abilites_17: 3548430646671065956
+      Abilites_18: 4262722261977908389
+      Abilites_19: -91968638394384779
+      Abilites_2: -6368689089694918502
+      Abilites_20: 6605423246588535724
+      Abilites_21: -1619619977965011870
+      Abilites_22: -7959461066141339519
+      Abilites_23: 3673827462625740016
+      Abilites_24: 3219881910751956409
+      Abilites_25: -6385709046484680197
+      Abilites_26: 2987017829015207052
+      Abilites_27: 5364898561049748853
+      Abilites_28: 8641582913314422152
+      Abilites_29: 4102484382785944581
+      Abilites_3: -2112141511658336031
+      Abilites_30: 4828335543196760114
+      Abilites_31: -6812394176118084582
+      Abilites_32: 7139122322845601024
+      Abilites_33: -139558575385014210
+      Abilites_34: -2371610382131200086
+      Abilites_35: 2670583361790177280
+      Abilites_36: -8110035506625902175
+      Abilites_37: 2113745576479184566
+      Abilites_38: -7910728894888128339
+      Abilites_39: 7486298397085657304
+      Abilites_4: 4106791994659729540
+      Abilites_40: -6031916584362591511
+      Abilites_41: -7399863564303112479
+      Abilites_42: 3272457263837366901
+      Abilites_43: -4715762764119802019
+      Abilites_44: -6088764463550612119
+      Abilites_45: 1761858056519574655
+      Abilites_46: -289791064020870430
+      Abilites_5: 535207038152174336
+      Abilites_6: -2252695142527498228
+      Abilites_7: 5676647543969572540
+      Abilites_8: 5036793043396049292
+      Abilites_9: 6357043983348745082
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
