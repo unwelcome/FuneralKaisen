@@ -1693,7 +1693,7 @@ GameObject:
   - component: {fileID: 1123093320}
   - component: {fileID: 1123093321}
   m_Layer: 9
-  m_Name: Square
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1711,7 +1711,8 @@ Transform:
   m_LocalPosition: {x: 0.033, y: 0.382, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1872847308}
   m_Father: {fileID: 2019541862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1123093320
@@ -24641,12 +24642,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872847307}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.547, y: 0.536, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.51400006, y: 0.15400001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2019541862}
+  m_Father: {fileID: 1123093319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1877136024
 GameObject:
@@ -26392,8 +26393,10 @@ GameObject:
   - component: {fileID: 2019541861}
   - component: {fileID: 2019541860}
   - component: {fileID: 2019541863}
+  - component: {fileID: 2019541867}
   - component: {fileID: 2019541864}
   - component: {fileID: 2019541865}
+  - component: {fileID: 2019541866}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -26489,7 +26492,6 @@ Transform:
   m_Children:
   - {fileID: 1123093319}
   - {fileID: 1635352245}
-  - {fileID: 1872847308}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2019541863
@@ -26534,20 +26536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f51225c571e9ae418b5c70bb4a89547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  velocity: 8.7
-  jumpForce: 17.5
-  groundCheck: {fileID: 1635352245}
-  groundBoxSize: {x: 0.46, y: 0.05}
-  groundDistance: 0.02
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  platformLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  dashVelocity: 13.5
-  dashDuration: 0.35
-  dashCooldown: 0.3
   health: 100
   immortalTimeOnHit: 1.5
 --- !u!114 &2019541865
@@ -26567,6 +26555,45 @@ MonoBehaviour:
   blueLaunchDelay: 0.3
   blueGravityScale: 0
   blueDamage: 10
+--- !u!114 &2019541866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019541858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef8fa7ba9e1c505499e749c4f6c6420c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  graphics: {fileID: 1123093319}
+  velocity: 8.7
+  jumpForce: 17.5
+  groundCheck: {fileID: 1635352245}
+  groundBoxSize: {x: 0.46, y: 0.1}
+  groundDistance: 0.05
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 2056
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  dashVelocity: 13.7
+  dashDuration: 0.35
+  dashCooldown: 0.33
+--- !u!114 &2019541867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019541858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81aa5854cd47a88408e3be2048453a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
 --- !u!1 &2030857625
 GameObject:
   m_ObjectHideFlags: 0

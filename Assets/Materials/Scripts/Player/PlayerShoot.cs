@@ -12,6 +12,15 @@ public class PlayerShoot : MonoBehaviour
     public float blueGravityScale = 0f;
     public int blueDamage = 10;
 
+    private SpriteRenderer sprite;
+    private PlayerMovement movement;
+
+    private void Awake()
+    {
+        sprite = GetComponentInChildren<SpriteRenderer>();
+        movement = GetComponent<PlayerMovement>();
+    }
+
     private void OnAttackBlue(InputValue value)
     {
         ShootBlue();
@@ -24,8 +33,8 @@ public class PlayerShoot : MonoBehaviour
         ProjectileController projectileScript = proj.GetComponent<ProjectileController>();
         projectileScript.LaunchAfterDelay(
             GetComponent<Collider2D>(), 
-            blueLaunchDelay, 
-            transform.localScale.x,
+            blueLaunchDelay,
+            movement.FacingDirection,
             blueGravityScale,
             blueDamage);
     }
