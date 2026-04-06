@@ -7,6 +7,16 @@ public class ThornsController : MonoBehaviour
     [SerializeField] private float activateDelay = 0.5f;
     [SerializeField] private float activeTime = 1.5f;
     [SerializeField] private int damage = 10;
+    [SerializeField] private float damageInterval = 1f;
+  
+
+    // Поля
+    private bool isActive;
+    private bool isTriggered;
+    private float activeTimer = 0f;
+    private float damageTimer = 0f;
+    private HealthController playerHealthInside;
+
 
     // Анимации
     private Animator animator;
@@ -23,11 +33,6 @@ public class ThornsController : MonoBehaviour
         hide
     }
 
-    // Поля
-    private bool isActive;
-    private bool isTriggered;
-    private float activeTimer = 0f;
-    private Player playerInside;
 
     // Инициализация шипов
     private void Awake()
@@ -45,10 +50,17 @@ public class ThornsController : MonoBehaviour
         }
 
         // Обновляем таймер шипов пока игрок внутри и наносим урон
-        if (playerInside != null)
+        if (playerHealthInside != null)
         {
             activeTimer = activeTime;
-            playerInside.GetDamage(damage);
+            damageTimer += Time.deltaTime;
+
+            // Прошло достаточно времени с прошлого урона от шипов + урон прошел
+            if (damageTimer >= damageInterval && playerHealthInside.GetDamage(damage))
+            {
+                damageTimer = 0;
+            }
+
         }
         // Иначе уменьшаем таймер жизни шипов
         else activeTimer -= Time.deltaTime;
@@ -60,11 +72,11 @@ public class ThornsController : MonoBehaviour
     // При первом контакте с шипами запоминаем игрока
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Player player = collider.GetComponent<Player>();
+        HealthController player = collider.GetComponent<HealthController>();
 
         if (player != null)
         {
-            playerInside = player;
+            playerHealthInside = player;
             if (!isTriggered) StartCoroutine(ActivateThorns()); // Активируем шипы
         }
     }
@@ -72,11 +84,11 @@ public class ThornsController : MonoBehaviour
     // При выходе игрока из шипов
     private void OnTriggerExit2D(Collider2D collider)
     {
-        Player player = collider.GetComponent<Player>();
+        HealthController player = collider.GetComponent<HealthController>();
 
-        if (player != null && playerInside == player)
+        if (player != null && playerHealthInside == player)
         {
-            playerInside = null;
+            playerHealthInside = null;
         }
     }
 
