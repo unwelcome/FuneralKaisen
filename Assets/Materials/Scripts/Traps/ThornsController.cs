@@ -53,12 +53,12 @@ public class ThornsController : MonoBehaviour
         if (playerHealthInside != null)
         {
             activeTimer = activeTime;
-            damageTimer += Time.deltaTime;
+            damageTimer -= Time.deltaTime;
 
             // Прошло достаточно времени с прошлого урона от шипов + урон прошел
-            if (damageTimer >= damageInterval && playerHealthInside.GetDamage(damage))
+            if (damageTimer <= 0f && playerHealthInside.GetDamage(damage))
             {
-                damageTimer = 0;
+                damageTimer = damageInterval;
             }
 
         }
@@ -77,6 +77,7 @@ public class ThornsController : MonoBehaviour
         if (player != null)
         {
             playerHealthInside = player;
+            damageTimer = 0;
             if (!isTriggered) StartCoroutine(ActivateThorns()); // Активируем шипы
         }
     }
@@ -89,6 +90,7 @@ public class ThornsController : MonoBehaviour
         if (player != null && playerHealthInside == player)
         {
             playerHealthInside = null;
+            damageTimer = 0;
         }
     }
 

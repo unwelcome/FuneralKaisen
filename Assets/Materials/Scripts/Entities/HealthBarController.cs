@@ -3,18 +3,19 @@ using UnityEngine;
 
 public class HealthBarController : MonoBehaviour
 {
-    [Header("HealthBarPoint")]
+    [Header("HealthBar")]
     [SerializeField] private bool showHealthBar = true; // Показывать шкалу хп
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Sprite[] armorSprites; // (100%, 80%, ...)
-    [SerializeField] private Sprite[] healthSprites; // (100%, 80%, ...)
+    [SerializeField] private SpriteRenderer healthBarSpriteRenderer;
+    [SerializeField] private Sprite armorSprite;
+    [SerializeField] private Sprite healthSprite;
 
     private HealthController health;
+    private float maxWidth;
 
     private void Start()
     {
         health = GetComponentInParent<HealthController>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        maxWidth = healthBarSpriteRenderer.size.x;
 
         health.OnHealthChanged += UpdateBar;
 
@@ -28,31 +29,19 @@ public class HealthBarController : MonoBehaviour
 
     private void UpdateBar(int currentArmor, int maxArmor, int currentHealth, int maxHealth)
     {
+        float percent = 0;
         if (currentArmor > 0)
         {
-            float percent = (float)currentArmor / maxArmor;
-            spriteRenderer.sprite = armorSprites[getSpriteIndex(percent, armorSprites.Length - 1)];
+            percent = (float)currentArmor / maxArmor;
+            healthBarSpriteRenderer.sprite = armorSprite;
         }
         else
         {
-            float percent = (float)currentHealth / maxHealth;
-            spriteRenderer.sprite = healthSprites[getSpriteIndex(percent, healthSprites.Length - 1)];
+            percent = (float)currentHealth / maxHealth;
+            healthBarSpriteRenderer.sprite = healthSprite;
         }
-    }
 
-    private int getSpriteIndex(float percent, int spritesCount)
-    {
-        int len = spritesCount - 1; // Не учитываем последний спрайт с пустым health bar-ом
-
-        int index = Mathf.Clamp(
-            Mathf.FloorToInt(len - percent * len),
-            0,
-            len
-        );
-
-        // Если хп нет, то выводим пустой health bar
-        if (percent <= 0) return len + 1;
-
-        return index;
+        // Изменяем длину спрайта с хп
+        healthBarSpriteRenderer.size = new Vector2(percent * maxWidth, healthBarSpriteRenderer.size.y);
     }
 }
