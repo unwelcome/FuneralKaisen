@@ -65,13 +65,14 @@ public class ProjectileController : MonoBehaviour
 
         if (hp != null)
         {
-            hp.TakeDamage(damage);
+            // Сущность неуязвима, снаряд игнорирует
+            if (!hp.GetDamage(damage)) return;
+
+            // Анимация уничтожения снаряда
+            State = ProjectileAnimationStates.destroy;
+
+            // Уничтожаем снаряд
+            Destroy(gameObject);
         }
-
-        // Анимация уничтожения снаряда
-        State = ProjectileAnimationStates.destroy;
-
-        // Уничтожаем снаряд
-        Destroy(gameObject);
     }
 }
