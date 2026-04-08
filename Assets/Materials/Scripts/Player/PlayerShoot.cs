@@ -8,10 +8,8 @@ public class PlayerShoot : MonoBehaviour
 
     [Header("Blue")]
     public GameObject bluePrefab;
-    public float blueLaunchDelay = 0.2f;
-    public float blueGravityScale = 0f;
-    public int blueDamage = 10;
 
+    private Collider2D collider;
     private SpriteRenderer sprite;
     private PlayerMovement movement;
 
@@ -19,6 +17,7 @@ public class PlayerShoot : MonoBehaviour
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
         movement = GetComponent<PlayerMovement>();
+        collider = GetComponent<Collider2D>();
     }
 
     private void OnAttackBlue(InputValue value)
@@ -28,15 +27,12 @@ public class PlayerShoot : MonoBehaviour
 
     private void ShootBlue()
     {
+        // Создаем снаряд
         GameObject proj = Instantiate(bluePrefab, firePoint.position, Quaternion.identity);
 
-        ProjectileController projectileScript = proj.GetComponent<ProjectileController>();
-        projectileScript.LaunchAfterDelay(
-            GetComponent<Collider2D>(), 
-            blueLaunchDelay,
-            movement.FacingDirection,
-            blueGravityScale,
-            blueDamage);
+        // Инициализируем поля снаряда
+        ProjectileController projectileController = proj.GetComponent<ProjectileController>();
+        projectileController.InitProjectile(collider, new Vector2(movement.FacingDirection, 0f), 1f);
     }
 
 }

@@ -224,4 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd30cc682d1cbc4d94c41960965a806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileController
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 72
   speed: 10

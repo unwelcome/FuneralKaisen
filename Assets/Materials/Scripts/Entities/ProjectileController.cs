@@ -1,78 +1,94 @@
+using System;
 using UnityEngine;
 using System.Collections;
 
 public class ProjectileController : MonoBehaviour
 {
     // Параметры снаряда
-    public float speed = 10f;
+    public LayerMask groundLayers;
+    public int baseDamage = 10;
+    public float Speed = 10f;
+
     private int damage;
-
-    // Ключевые объекты
-    private Collider2D ownerCollider; // Хит бокс создателя снаряда (для игнорирования коллизии)
-    private Rigidbody2D rb; // Сам снаряд
-
-    // Анимации снаряда
+    private float gravityScale;
+    private Vector2 direction;
     private Animator animator;
-    private ProjectileAnimationStates State;
-    private enum ProjectileAnimationStates
+    private Rigidbody2D rb;
+
+
+    // Инициализация полей
+    public void InitProjectile(Collider2D owner, Vector2 direction, float damageScale)
     {
-        create,
-        idle,
-        destroy
+        rb = animator.GetComponentInParent<Rigidbody2D>();
+
+        // Отключаем гравитацию на время создания снаряда
+        gravityScale = rb.gravityScale;
+        rb.gravityScale = 0f;
+
+        // Снаряд стоит на месте
+        rb.linearVelocity = Vector2.zero;
+
+        // игнорируем коллизию с тем, кто выстрелил
+        Collider2D thisCol = GetComponent<Collider2D>();
+        Physics2D.IgnoreCollision(thisCol, owner);
+
+        this.direction = direction;
+        damage = (int)Math.Round(baseDamage * damageScale);
+
+        animator = GetComponentInChildren<Animator>();
     }
 
-    void Awake()
+
+    // Проверка попадания
+    public void OnTriggerEnter2D(Collider2D collider)
     {
-        rb = GetComponent<Rigidbody2D>();
+        // Проверка попадания в стену / землю
+        if ((groundLayers.value & (1 << collider.gameObject.layer)) != 0)
+        {
+            Debug.Log("hit wall!");
+
+            animator.SetTrigger("IsHitted");
+
+            return;
+        }
+
+        // Eсли у объекта есть здоровье — наносим урон
+        HealthController targetHealthController = collider.GetComponent<HealthController>();
+
+        if (targetHealthController != null)
+        {
+            // Сущность неуязвима, снаряд игнорирует
+            if (!targetHealthController.GetDamage(damage)) return;
+
+            animator.SetTrigger("IsHitted");
+        }
+    }
+
+
+    // Запуск снаряда
+    public void Launch()
+    {
+        // Запуск снаряда
+        rb.linearVelocity = new Vector2(Speed * direction.x, Speed * direction.y);
+
+        // Возвращаем гравитацию
+        rb.gravityScale = gravityScale;
+    }
+
+
+    // Остановка снаряда
+    public void Stop()
+    {
+        // Останавливаем снаряд
+        Rigidbody2D rb = animator.GetComponentInParent<Rigidbody2D>();
         rb.linearVelocity = Vector2.zero;
     }
 
-    public void LaunchAfterDelay(Collider2D owner, float delay, float direction, float gravityScale, int damage)
+
+    // Уничтожение снаряда
+    public void Destroy()
     {
-        // Задаем параметры для снаряда
-        this.damage = damage;
-        this.ownerCollider = owner;
-
-        // Задаем гравитацию для снаряда
-        rb.gravityScale = gravityScale;
-
-        // Включаем анимацию создания
-        State = ProjectileAnimationStates.create;
-
-        // игнорируем коллизию с тем, кто выстрелил
-        Collider2D myCol = GetComponent<Collider2D>();
-        Physics2D.IgnoreCollision(myCol, ownerCollider);
-
-        // Запуск снаряда
-        StartCoroutine(Launch(delay, direction));
+        Destroy(gameObject);
     }
 
-    IEnumerator Launch(float delay, float direction)
-    {
-        yield return new WaitForSeconds(delay);
-
-        // Анимация полета
-        State = ProjectileAnimationStates.idle;
-
-        // Задаем траекторию движения
-        rb.linearVelocity = new Vector2(speed * direction, 0f);
-    }
-
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        // Eсли у объекта есть здоровье — наносим урон
-        HealthController hp = collider.GetComponent<HealthController>();
-
-        if (hp != null)
-        {
-            // Сущность неуязвима, снаряд игнорирует
-            if (!hp.GetDamage(damage)) return;
-
-            // Анимация уничтожения снаряда
-            State = ProjectileAnimationStates.destroy;
-
-            // Уничтожаем снаряд
-            Destroy(gameObject);
-        }
-    }
 }
