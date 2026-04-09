@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5165321827933808845}
   - component: {fileID: 5313223856060368290}
   - component: {fileID: 228225340589966030}
+  - component: {fileID: 336058083042202426}
+  - component: {fileID: 355266810320123754}
   m_Layer: 11
   m_Name: Circle
   m_TagString: Untagged
@@ -114,6 +116,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &336058083042202426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4678445067259199766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9f5b7df2e3b3b4c98731023cd4ff62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!114 &355266810320123754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4678445067259199766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9f5b7df2e3b3b4c98731023cd4ff62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectileAnimationEventBridge
 --- !u!1 &7518608406034160791
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,4 +253,5 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 72
-  speed: 10
+  baseDamage: 10
+  Speed: 10

@@ -19,7 +19,7 @@ public class ProjectileController : MonoBehaviour
     // Инициализация полей
     public void InitProjectile(Collider2D owner, Vector2 direction, float damageScale)
     {
-        rb = animator.GetComponentInParent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
         // Отключаем гравитацию на время создания снаряда
         gravityScale = rb.gravityScale;
@@ -66,7 +66,7 @@ public class ProjectileController : MonoBehaviour
 
 
     // Запуск снаряда
-    public void Launch()
+    public void LaunchProjectile()
     {
         // Запуск снаряда
         rb.linearVelocity = new Vector2(Speed * direction.x, Speed * direction.y);
@@ -77,7 +77,7 @@ public class ProjectileController : MonoBehaviour
 
 
     // Остановка снаряда
-    public void Stop()
+    public void StopProjectile()
     {
         // Останавливаем снаряд
         Rigidbody2D rb = animator.GetComponentInParent<Rigidbody2D>();
@@ -86,7 +86,7 @@ public class ProjectileController : MonoBehaviour
 
 
     // Уничтожение снаряда
-    public void Destroy()
+    public void DestroyProjectile()
     {
         Destroy(gameObject);
     }
