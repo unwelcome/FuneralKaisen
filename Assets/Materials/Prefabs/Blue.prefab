@@ -253,5 +253,5 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 72
-  baseDamage: 10
+  baseDamage: 85
   Speed: 10
