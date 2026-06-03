@@ -53,7 +53,7 @@ public class ProjectileController : MonoBehaviour
         }
 
         // Eсли у объекта есть здоровье — наносим урон
-        HealthController targetHealthController = collider.GetComponent<HealthController>();
+        HealthController targetHealthController = collider.GetComponentInParent<HealthController>();
 
         if (targetHealthController != null)
         {
